@@ -19,3 +19,12 @@ class Leaves(models.Model):
     roll = models.IntegerField(default=0)
     name = models.CharField(max_length=200)
     div = models.IntegerField(default =0,choices=[(1,1),(2,2),(3,3),(4,4),(5,5)])
+
+    def __str__(self):
+        return self.name
+
+
+class Git(models.Model):
+    name = models.CharField(max_length=200)
+    email = models.CharField(max_length=200)
+    message = models.CharField(max_length=2000)
