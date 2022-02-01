@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Login</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <h2>Login</h2>
+    <br>
+    {% if error %}
+        <h4 style="color: red">{{ error }}</h4>
+        <br>
+    {% endif %}
+    <form method="post" action="{% url 'login_user' %}">
+        <table class="form-table">
+            {% csrf_token %}
+            <tr>
+                <td class="form-table">Username: </td>
+                <td class="form-table"><input class="inputData" type="text" name="username"></td>
+            </tr>
+            <tr>
+                <td class="form-table">Password: </td>
+                <td class="form-table"><input class="inputData"  type="password" name="password"></td>
+            <tr>    <td><input type=checkbox>Remember Me</td><tr>
+            </tr>
+            <tr>
+                <td  class="form-table" colspan="2">
+                    <input class="inputData" type="submit" value="Submit">
+                </td>
+            </tr>
+        </table>
+
+
+    </form>
+    </body>
+</html>
