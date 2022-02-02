@@ -23,8 +23,8 @@ admin.site.site_header = "Student Management System"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('StudentMS.urls')),
-    path('login/', views.login_user, name="login_user"),
+    path('home/',include('StudentMS.urls')),
+    path('', views.login_user, name="login_user"),
 ]
 
 
