@@ -30,12 +30,10 @@ def student_list(request):
     return render(request, "SMS/student_details.html", context={"all_students": student_list})
 
 @login_required
-def add_student(request, student_id):
+def add_student(request):
     if request.method == "GET":
-        student = get_object_or_404(Student, id=student_id, user=request.user)
-        return render(request, "SMS/add_student.html", context={'album': student})
+        return render(request, "SMS/add_student.html")
     if request.method == "POST":
-        student = get_object_or_404(Student, id=student_id)
         name = request.POST['student_name']
         roll = request.POST['student_roll']
         regno = request.POST['student_regno']
@@ -53,4 +51,10 @@ def add_student(request, student_id):
         new_stu.profile = profile
         new_stu.save()
 
-        return redirect('student_details', student.id)
+        return redirect('student_list')
+
+@login_required
+def student_delete(request, student_id):
+	student = get_object_or_404(Student, id=student_id)
+	student.delete()
+	return redirect('student_list')
