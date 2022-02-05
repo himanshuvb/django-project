@@ -15,10 +15,10 @@ class Student(models.Model):
         return str(self.regno)
 
 class Leaves(models.Model):
-    regno = models.ForeignKey(Student,on_delete=models.CASCADE)
-    roll = models.IntegerField(default=0)
+    regno = models.IntegerField(default=0)
     name = models.CharField(max_length=200)
-    div = models.IntegerField(default =0,choices=[(1,1),(2,2),(3,3),(4,4),(5,5)])
+    reason = models.CharField(max_length=200)
+
 
     def __str__(self):
         return self.name
