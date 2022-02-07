@@ -55,8 +55,8 @@ def add_student(request):
         return redirect('student_list')
 
 @login_required
-def student_delete(request, student_id):
-    student = get_object_or_404(Student, id=student_id)
+def student_delete(request, student_regno):
+    student = get_object_or_404(Student, regno=student_regno)
     student.delete()
     return redirect('student_list')
 

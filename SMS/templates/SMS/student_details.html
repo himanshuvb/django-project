@@ -37,7 +37,7 @@
                     <h3>{{ student.name }}</h3>
                 {% endif %}
             </td>
-            <td><a href="{% url 'student_delete' student.id  %}">Delete Student</a></td>
+            <td><a href="{% url 'student_delete' student.regno  %}">Delete Student</a></td>
             </tr>
             {% endfor %}
         </table>

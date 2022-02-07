@@ -1,14 +1,15 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>leaves</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
+	<head>
+		<title></title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static "CSS/main.css" %}">
+		<link rel="stylesheet" href="{% static "CSS/fontawesome-all.min.css" %}">
+		<noscript><link rel="stylesheet" href="{% static 'CSS/noscript.css' %}" ></noscript>
+	</head>
+	<body class="is-preload">
         <form method="post" action="">
             <table class="form-table">
                 {% csrf_token %}
@@ -32,6 +33,23 @@
             </table>
         </form>
         
-        <script src="" async defer></script>
-    </body>
+        <footer id="footer" class="wrapper style1-alt">
+            <div class="inner">
+                <ul class="menu">
+                    <li>&copy; 2022 All rights reserved.</li><li>Design: Shubham Nagarkar</li>
+                </ul>
+            </div>
+        </footer>
+
+    <!-- Scripts -->
+        <script src="{% static "JS/jquery.min.js" %}"></script>
+        <script src="{% static "JS/jquery.scrollex.min.js" %}"></script>
+        <script src="{% static "JS/jquery.scrolly.min.js" %}"></script>
+        <script src="{% static "JS/browser.min.js" %}"></script>
+        <script src="{% static "JS/breakpoints.min.js" %}"></script>
+        <script src="{% static "JS/util.js" %}"></script>
+        <script src="{% static "JS/main.js" %}"></script>
+
+</body>
 </html>
+
