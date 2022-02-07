@@ -76,3 +76,7 @@ def ap_leaves(request):
 
         return redirect('login_user')
  
+@login_required
+def leaves_details(request):
+    leaves_list = Leaves.objects.all()
+    return render(request, "SMS/leaves_details.html", context={"all_leaves": leaves_list})
