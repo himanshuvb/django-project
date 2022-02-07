@@ -65,7 +65,6 @@ def ap_leaves(request):
     if request.method == "GET":
         return render(request, "SMS/leaves.html")
     if request.method == "POST":
-        
         regno = request.POST['student_regno']
         name=request.POST['student_name']
         reason=request.POST['student_reason']
