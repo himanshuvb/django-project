@@ -65,14 +65,14 @@ def ap_leaves(request):
     if request.method == "GET":
         return render(request, "SMS/leaves.html")
     if request.method == "POST":
+        
         regno = request.POST['student_regno']
         name=request.POST['student_name']
         reason=request.POST['student_reason']
+        student = get_object_or_404(Student, regno = regno)
         
-        new_leaves = Leaves()
-        new_leaves.name = name
-        new_leaves.regno = regno
-        new_leaves.reason = reason
+        new_leaves = Leaves(name = name , regno = student, reason = reason)
+
         new_leaves.save()
 
         return redirect('login_user')

@@ -5,7 +5,7 @@ from random import choices
 class Student(models.Model):
     name = models.CharField(max_length=200)
     roll = models.IntegerField(default=0)
-    regno = models.IntegerField(default=0)
+    regno = models.IntegerField(primary_key=True)
     age = models.IntegerField(default=1,blank=True,null=True)
     div = models.IntegerField(default =0,choices=[(1,1),(2,2),(3,3),(4,4),(5,5)])
     profile = models.ImageField(default=None, null=True)
@@ -15,7 +15,7 @@ class Student(models.Model):
         return str(self.regno)
 
 class Leaves(models.Model):
-    regno = models.IntegerField(default=0)
+    regno = models.ForeignKey(Student, on_delete = models.DO_NOTHING)
     name = models.CharField(max_length=200)
     reason = models.CharField(max_length=200)
 
