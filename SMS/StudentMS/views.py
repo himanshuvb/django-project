@@ -1,6 +1,5 @@
-from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
-from .models import Git, Leaves, Student
+from .models import Git, Student
 from django.contrib.auth.decorators import login_required
 from django.core.files import File
 
@@ -56,24 +55,6 @@ def add_student(request):
 
 @login_required
 def student_delete(request, student_id):
-    student = get_object_or_404(Student, id=student_id)
-    student.delete()
-    return redirect('student_list')
-
-
-def ap_leaves(request):
-    if request.method == "GET":
-        return render(request, "SMS/leaves.html")
-    if request.method == "POST":
-        regno = request.POST['student_regno']
-        name=request.POST['student_name']
-        reason=request.POST['student_reason']
-        
-        new_leaves = Leaves()
-        new_leaves.name = name
-        new_leaves.regno = regno
-        new_leaves.reason = reason
-        new_leaves.save()
-
-        return redirect('login_user')
- 
+	student = get_object_or_404(Student, id=student_id)
+	student.delete()
+	return redirect('student_list')
