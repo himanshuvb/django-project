@@ -25,6 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/',include('StudentMS.urls')),
     path('', views.login_user, name="login_user"),
+    path('student_login/',views.student_login,name="student_login")
 ]
 
 
