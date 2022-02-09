@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
+from matplotlib.pyplot import get
 from .models import Git, Leaves, Student
 from django.contrib.auth.decorators import login_required
 from django.core.files import File
@@ -80,5 +81,14 @@ def ap_leaves(request):
 def leaves_details(request):
     leaves_list = Leaves.objects.all()
     return render(request, "SMS/leaves_details.html", context={"all_leaves": leaves_list})
+
+@login_required
+def manage_leaves(request, leaves_regno):
+    
+    leaves = Leaves.objects.filter(regno = leaves_regno)
+    leaves.delete()
+    return redirect('leaves_details')
+    
+
 
 

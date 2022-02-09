@@ -8,6 +8,7 @@ class Student(models.Model):
     regno = models.IntegerField(primary_key=True)
     age = models.IntegerField(default=1,blank=True,null=True)
     div = models.IntegerField(default =0,choices=[(1,1),(2,2),(3,3),(4,4),(5,5)])
+    leaves_total = models.IntegerField(default=0)
     profile = models.ImageField(default=None, null=True)
     
 

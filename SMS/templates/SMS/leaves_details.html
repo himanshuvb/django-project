@@ -5,8 +5,8 @@
 		<title></title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="{% static "CSS/main.css" %}">
-		<link rel="stylesheet" href="{% static "CSS/fontawesome-all.min.css" %}">
+		<link rel="stylesheet" href="{% static 'CSS/main.css' %}">
+		<link rel="stylesheet" href="{% static 'CSS/fontawesome-all.min.css' %}">
 		<noscript><link rel="stylesheet" href="{% static 'CSS/noscript.css' %}" ></noscript>
 	</head>
 	<body class="is-preload">
@@ -15,12 +15,14 @@
                 <th>Name</th>
                 <th>Reg no</th>
                 <th>Reason</th>
+                <th>approved or not</th>
             </tr>
             {% for leaves in all_leaves %}
             <tr>
                 <td>{{ leaves.name| title }}</td>
                 <td>{{ leaves.regno}}</td>
                 <td>{{ leaves.reason}}</td>
+                <td><a href="{% url 'manage_leaves' leaves.regno %}">Approve leave</a></td>
             </tr>
             {% endfor %}
         </table>

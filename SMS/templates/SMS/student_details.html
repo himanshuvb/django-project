@@ -22,6 +22,7 @@
                 <th>Age</th>
                 <th>Division</th>
                 <th>Profile picture</th>
+                <th>leaves count</th>
                 <th>Delete profile</th>
             </tr>
             {% for student in all_students %}
@@ -37,6 +38,7 @@
                     <h3>{{ student.name }}</h3>
                 {% endif %}
             </td>
+            <td>{{student.leaves_total}}</td>
             <td><a href="{% url 'student_delete' student.regno  %}">Delete Student</a></td>
             </tr>
             {% endfor %}
