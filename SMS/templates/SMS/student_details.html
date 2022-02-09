@@ -38,7 +38,8 @@
                     <h3>{{ student.name }}</h3>
                 {% endif %}
             </td>
-            <td>{{student.leaves_total}}</td>
+            <td>{{ student.leaves_total}}
+            </td>
             <td><a href="{% url 'student_delete' student.regno  %}">Delete Student</a></td>
             </tr>
             {% endfor %}
