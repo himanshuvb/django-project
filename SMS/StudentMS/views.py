@@ -55,8 +55,8 @@ def add_student(request):
         return redirect('student_list')
 
 @login_required
-def student_delete(request, student_id):
-    student = get_object_or_404(Student, id=student_id)
+def student_delete(request, student_regno):
+    student = get_object_or_404(Student, regno=student_regno)
     student.delete()
     return redirect('student_list')
 
@@ -76,3 +76,9 @@ def ap_leaves(request):
 
         return redirect('login_user')
  
+@login_required
+def leaves_details(request):
+    leaves_list = Leaves.objects.all()
+    return render(request, "SMS/leaves_details.html", context={"all_leaves": leaves_list})
+
+

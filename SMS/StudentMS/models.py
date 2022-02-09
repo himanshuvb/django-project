@@ -9,6 +9,7 @@ class Student(models.Model):
     age = models.IntegerField(default=1,blank=True,null=True)
     div = models.IntegerField(default =0,choices=[(1,1),(2,2),(3,3),(4,4),(5,5)])
     profile = models.ImageField(default=None, null=True)
+    
 
 
     def __str__(self):

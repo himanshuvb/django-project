@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static "CSS/main.css" %}">
+		<link rel="stylesheet" href="{% static "CSS/fontawesome-all.min.css" %}">
+		<noscript><link rel="stylesheet" href="{% static 'CSS/noscript.css' %}" ></noscript>
+	</head>
+	<body class="is-preload">
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Reg no</th>
+                <th>Reason</th>
+            </tr>
+            {% for leaves in all_leaves %}
+            <tr>
+                <td>{{ leaves.name| title }}</td>
+                <td>{{ leaves.regno}}</td>
+                <td>{{ leaves.reason}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer id="footer" class="wrapper style1-alt">
+        <div class="inner">
+            <ul class="menu">
+                 <li>&copy; 2022 All rights reserved.</li><li>Design: Shubham Nagarkar</li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+        <script src="{% static "JS/jquery.min.js" %}"></script>
+        <script src="{% static "JS/jquery.scrollex.min.js" %}"></script>
+        <script src="{% static "JS/jquery.scrolly.min.js" %}"></script>
+        <script src="{% static "JS/browser.min.js" %}"></script>
+        <script src="{% static "JS/breakpoints.min.js" %}"></script>
+        <script src="{% static "JS/util.js" %}"></script>
+        <script src="{% static "JS/main.js" %}"></script>
+
+</body>
+</html>
