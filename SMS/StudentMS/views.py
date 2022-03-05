@@ -4,6 +4,7 @@ from matplotlib.pyplot import get
 from .models import Git, Leaves, Student
 from django.contrib.auth.decorators import login_required
 from django.core.files import File
+from django.contrib.auth import logout
 
 
 # Create your views here.
@@ -91,6 +92,10 @@ def manage_leaves(request, leaves_regno):
     stu.save()
     leaves.delete()
     return redirect('leaves_details')
+@login_required
+def logoutsms(request):
+     logout(request)
+     return redirect('login_user')
     
 
 
