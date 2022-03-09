@@ -87,6 +87,9 @@ def leaves_details(request):
 def manage_leaves(request, leaves_regno):
     
     leaves = Leaves.objects.filter(regno = leaves_regno)
+    stu = get_object_or_404(Student, regno = leaves_regno)
+    stu.leaves_total += 1
+    stu.save()
     leaves.delete()
     return redirect('leaves_details')
 @login_required
