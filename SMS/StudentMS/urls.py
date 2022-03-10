@@ -9,6 +9,7 @@ urlpatterns = [
     path('leaves/',views.ap_leaves,name="ap_leaves"),
     path('leaves/list/', views.leaves_details, name="leaves_details"),
     path('leaves/<int:leaves_regno>/manage/', views.manage_leaves, name="manage_leaves"),
+    path('leaves/<int:leaves_regno>/disapprove/', views.disapprove_leaves, name="disapprove_leaves"),
     path('student/logoutsms', views.logoutsms, name="logoutsms"),
 
 ]

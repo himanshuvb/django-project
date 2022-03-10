@@ -26,7 +26,8 @@
                 <th>Name</th>
                 <th>Reg no</th>
                 <th>Reason</th>
-                <th>approved or not</th>
+                <th>Approve</th>
+                <th>Disapprove</th>
             </tr>
             {% for leaves in all_leaves %}
             <tr>
@@ -34,6 +35,7 @@
                 <td>{{ leaves.regno}}</td>
                 <td>{{ leaves.reason}}</td>
                 <td><a href="{% url 'manage_leaves' leaves.regno %}">Approve leave</a></td>
+                <td><a href="{% url 'disapprove_leaves' leaves.regno %}">Disapprove leave</a></td>
             </tr>
             {% endfor %}
         </table>

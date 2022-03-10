@@ -92,6 +92,13 @@ def manage_leaves(request, leaves_regno):
     stu.save()
     leaves.delete()
     return redirect('leaves_details')
+
+@login_required
+def disapprove_leaves(request, leaves_regno):
+    leaves = Leaves.objects.filter(regno = leaves_regno)
+    leaves.delete()
+    return redirect('leaves_details')
+    
 @login_required
 def logoutsms(request):
      logout(request)
