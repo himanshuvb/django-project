@@ -1,6 +1,5 @@
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
-from matplotlib.pyplot import get
 from .models import Git, Leaves, Student
 from django.contrib.auth.decorators import login_required
 from django.core.files import File
