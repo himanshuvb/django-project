@@ -77,12 +77,8 @@ WSGI_APPLICATION = 'SMS.wsgi.application'
 
 DATABASES = {
      'default': {
-         'ENGINE': 'django.db.backends.mysql',
-         'NAME': 'SMS',
-         'USER': 'root',
-         'PASSWORD': '',
-         'HOST': '127.0.0.1',
-         'PORT': '3307'
+         'ENGINE': 'django.db.backends.sqlite3',
+         'NAME': BASE_DIR / 'db.sqlite3',
      }, 
      'BACKUP':{
         'ENGINE': 'django.db.backends.sqlite3',
